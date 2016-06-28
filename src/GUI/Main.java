@@ -29,24 +29,26 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
     public Main() {
-        initComponents();
-        assembleButton.setVisible(false);
-        runButton.setVisible(false);
-        nextIns.setVisible(false);
-        execAll.setVisible(false);
-        computer = new Computer();
-
-        computer.fix_memory_table(memoryTable);
-        monitor = new Monitor(computer.aa.getMemory());
-        
-        for (int i = 0; i < mipsCode.getRowCount(); i++) {
-            mipsCode.setValueAt(Integer.toHexString(i*4), i, 0);
-        }
-        setStyle(mipsCode);
-        setStyle(program1);
-        setStyle(program2);
-        setStyle(program3);
-        loadprograms();
+//        initComponents();
+//        assembleButton.setVisible(false);
+//        runButton.setVisible(false);
+//        nextIns.setVisible(false);
+//        execAll.setVisible(false);
+//        computer = new Computer();
+//
+//        computer.fix_memory_table(memoryTable);
+//        monitor = new Monitor(computer.aa.getMemory());
+//
+//        for (int i = 0; i < mipsCode.getRowCount(); i++) {
+//            mipsCode.setValueAt(Integer.toHexString(i*4), i, 0);
+//        }
+//        setStyle(mipsCode);
+//        setStyle(program1);
+//        setStyle(program2);
+//        setStyle(program3);
+//        loadprograms();
+        FPU.Add adder = new FPU.Add();
+        adder.FPAdder(56.2f, 33.4f);
 }
 
     private Main(int result,JFileChooser input) {
