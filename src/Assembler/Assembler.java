@@ -324,8 +324,8 @@ public class Assembler {
         @Override
         public String parse(String[] parts) {
             String opcode = instructionCodes.get(parts[0]);
-            String rs = cp1.getFloatRegisters().getRegister(parts[1]);
-            String rt = cp1.getFloatRegisters().getRegister(parts[2]);
+            String rs =getRegister(parts[2]);// cp1.getFloatRegisters().getRegister(parts[1]);
+            String rt = cp1.getFloatRegisters().getRegister(parts[1]);
             String immediate = parseSigned16BitBin(Integer.parseInt(parts[3]));
             return opcode + rs + rt + immediate;
         }
@@ -336,8 +336,8 @@ public class Assembler {
         @Override
         public String parse(String[] parts) {
             String opcode = instructionCodes.get(parts[0]);
-            String rs = cp1.getFloatRegisters().getRegister(parts[1]);
-            String rt = cp1.getFloatRegisters().getRegister(parts[2]);
+            String rs = getRegister(parts[2]);//cp1.getFloatRegisters().getRegister(parts[1]);
+            String rt = cp1.getFloatRegisters().getRegister(parts[1]);
             String immediate = parseSigned16BitBin(Integer.parseInt(parts[3]));
             return opcode + rs + rt + immediate;
         }

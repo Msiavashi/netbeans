@@ -22,12 +22,12 @@ public class EXE_MEM {
         /**
          * Result of ALU
          */
-	int ALU_result;
+	float ALU_result;////
         /**
          * Originally come from ID.
          * Data of RT Address Register determined in ID by RegisterFile
          */
-	int RT_DATA;
+	float RT_DATA;///
         /**
          * Depending on I-Type or R-Type; In order its RT OR RD  
          */
@@ -79,14 +79,14 @@ public class EXE_MEM {
          * 
          * @return ALU_Result - what was the result of ALU in EXE.
          */
-	public int getALU_result() {
+	public float getALU_result() {
 		return ALU_result;
 	}
         /**
          * 
          * @param ALU_result - Set the result of ALU .
          */
-	public void setALU_result(int ALU_result) {
+	public void setALU_result(float ALU_result) {
 		this.ALU_result = ALU_result;
 	}
         /**
@@ -94,14 +94,14 @@ public class EXE_MEM {
          * @return RT_DATA - Data stored in RT address Register 
          * moved in Pipeline.
          */
-	public int getRT_DATA() {
+	public float getRT_DATA() {
 		return RT_DATA;
 	}
         /**
          * 
          * @param rT_DATA - Dat that should be stored in RT_DATA.
          */
-	public void setRT_DATA(int rT_DATA) {
+	public void setRT_DATA(float rT_DATA) {
 		RT_DATA = rT_DATA;
 	}
         /**

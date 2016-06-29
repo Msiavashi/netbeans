@@ -7,16 +7,24 @@ import java.util.HashMap;
  */
 public class Registers {
     private HashMap<String, String> floatRegisters = new HashMap<String, String>();
+    float[] regFile=new float[32];
 
     public Registers(){
 
         initRegisterCodes();
+        this.regFile[2]=2.5f;
+        this.regFile[3]=3.1f;
     }
 
     public String getRegister(String reg){
         return floatRegisters.get(reg);
     }
-
+    public void setReg(int addres,float value){
+        this.regFile[addres]=value;
+    }
+    public float getReg(int addres){
+        return this.regFile[addres];
+    }
     private void initRegisterCodes() {
         floatRegisters.put("$f0", "00000");
         floatRegisters.put("$f1", "00001");

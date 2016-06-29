@@ -6,7 +6,7 @@ package FPU;
 public class Controller {
 
     private Registers floatRegisters = new Registers();
-//    private Add add = new Add();
+    private Add add = new Add();
 
     public Controller(){
         Registers floatRegisteFile = new Registers();

@@ -33,6 +33,9 @@ public class MEM {
 		this.stage_if = stage_If;
 		data_mem = new ArrayList<>(FileHandler.FileIO.FiletoStringArray("dataCache.txt"));
 	}
+    public void isFloat(EXE_MEM exe){
+        this.exemem=exe;
+    }
         /**
          * Do the job of Memory.
          * This includes:
@@ -45,31 +48,50 @@ public class MEM {
          * 4- Store ALU_Result, WriteRegister, controlBits in 
          *    in MEM/WB Pipeline Register.
          */
-	public void action(boolean modebit,memory.AddressAllocator aa) {
-		boolean MEM_READ = (exemem.getControlBits().charAt(4)) == '0' ? false
+	public MEM_WB action(boolean modebit,memory.AddressAllocator aa) {
+		boolean MEM_READ = (exemem.getControlBits().charAt(5)) == '0' ? false
 				: true;
-		boolean MEM_WRITE = (exemem.getControlBits().charAt(5)) == '0' ? false
+		boolean MEM_WRITE = (exemem.getControlBits().charAt(6)) == '0' ? false
 				: true;
 		if (MEM_WRITE) {
-			data_mem.set(exemem.getALU_result(), Integer.toString(exemem.getRT_DATA()));
-			System.out.println("datamem with this address : "+ exemem.getALU_result() + "\t"+ data_mem.get(exemem.getALU_result()));
+                        if(this.exemem.controlBits.charAt(0)=='1'){
+			data_mem.set((int)exemem.getALU_result(), Float.toString(exemem.getRT_DATA()));
+			System.out.println("datamem with this address : "+ exemem.getALU_result() + "\t"+ data_mem.get((int)exemem.getALU_result()));
+                        }else{
+                            int res=(int)exemem.getRT_DATA();
+                            data_mem.set((int)exemem.getALU_result(), Integer.toString(res));
+                        }
 		}
 		// MEM_READ
 		if (MEM_READ) {
                     String data;
-                    if(modebit){
-                        int i =0 ;
-                        data = aa.getMemory().get(aa.parse8DigitHex(i));
-                    }else{
-                        data = data_mem.get(exemem.getALU_result());
+                    if(this.exemem.controlBits.charAt(0)=='1'){
+                        data=data_mem.get((int)exemem.getALU_result());
+                        memwb.setREAD_DATA(Float.parseFloat(data));
+                        memwb.setALU_result(exemem.getALU_result());
+                        memwb.setWrite_Register(exemem.getWrite_Register());
+                        memwb.setControlBits(exemem.getControlBits());
                     }
+                    else{
+                        if(modebit){
+                            int i =0 ;
+                            data = aa.getMemory().get(aa.parse8DigitHex(i));
+                        }else{
                         
-                    memwb.setREAD_DATA(Integer.parseInt(data));
-		}
-		memwb.setALU_result(exemem.getALU_result());
-		memwb.setWrite_Register(exemem.getWrite_Register());
-		memwb.setControlBits(exemem.getControlBits());
+                            data = data_mem.get((int)exemem.getALU_result());
+                        }
+                        
+                        memwb.setREAD_DATA(Integer.parseInt(data));
+                        memwb.setALU_result((int)exemem.getALU_result());
+                        memwb.setWrite_Register(exemem.getWrite_Register());
+                        memwb.setControlBits(exemem.getControlBits());
+                    }
+                }
 
+        memwb.setALU_result(exemem.getALU_result());
+        memwb.setWrite_Register(exemem.getWrite_Register());
+        memwb.setControlBits(exemem.getControlBits());
+        return this.memwb;
 	}
         
         

@@ -20,7 +20,9 @@ public class WB {
 		this.id = id;
 		this.memwb = memwb;
 	}
-        
+	public void isFloat(MEM_WB wb){
+		this.memwb=wb;
+	}
         
         /**
          * Do the job of WriteBack.
@@ -31,17 +33,26 @@ public class WB {
          *      ALU_Result [R-Type] or READ_Data [Load] should be used.
          */
 	public void action(boolean modebit) {
-		boolean MEM2REG = (memwb.getControlBits().charAt(8)) == '0' ? false
+		boolean MEM2REG = (memwb.getControlBits().charAt(9)) == '0' ? false
 				: true;
-		boolean REG_WRITE = (memwb.getControlBits().charAt(0)) == '0' ? false
+		boolean REG_WRITE = (memwb.getControlBits().charAt(1)) == '0' ? false
 				: true;
 		if (REG_WRITE) {
-			if (!MEM2REG)
-				id.regfile.setReg(memwb.Write_Register,
-						memwb.getALU_result());
-			else
-				id.regfile.setReg(memwb.Write_Register,
-						memwb.getREAD_DATA());
-		}
+			if (!MEM2REG){
+                                if(this.memwb.controlBits.charAt(0)=='1'){
+                                    id.reg_float.setReg(this.memwb.Write_Register, this.memwb.getALU_result());
+                                }else{
+				id.regfile.setReg(memwb.Write_Register,(int)memwb.getALU_result());
+                                }
+                        }
+                        else{
+                            if(this.memwb.controlBits.charAt(0)=='1'){
+                                id.reg_float.setReg(this.memwb.Write_Register, this.memwb.getREAD_DATA());
+                            }else{
+				id.regfile.setReg(memwb.Write_Register,(int)memwb.getREAD_DATA());
+                        
+                            }
+                        }
+                }
 	}
 }
