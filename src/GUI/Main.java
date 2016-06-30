@@ -8,6 +8,8 @@ package GUI;
 import javax.swing.table.DefaultTableModel;
 import Assembler.Assembler;
 import Assembler.Instruction;
+import FPU.Add;
+import FPU_.*;
 import FileHandler.FileIO;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,7 +40,7 @@ public class Main extends javax.swing.JFrame {
 
         computer.fix_memory_table(memoryTable);
         monitor = new Monitor(computer.aa.getMemory());
-        
+
         for (int i = 0; i < mipsCode.getRowCount(); i++) {
             mipsCode.setValueAt(Integer.toHexString(i*4), i, 0);
         }
@@ -47,6 +49,16 @@ public class Main extends javax.swing.JFrame {
         setStyle(program2);
         setStyle(program3);
         loadprograms();
+//        A1 a1 = new A1();
+//        A2 a2 = new A2();
+//        A3 a3 = new A3();
+//        A4 a4 = new A4();
+//        A1_A2 a1a2=a1.action();
+//        A2_A3 a2a3=a2.action(a1a2);
+//        A3_A4 a3a4=a3.action(a2a3);
+//        System.out.println(a4.action(a3a4));
+//        FPU.Add nn=new FPU.Add();
+//        nn.FPAdder(5.1f,2.5f);
 }
 
     private Main(int result,JFileChooser input) {

@@ -45,38 +45,52 @@ public class CU {
 	   // second aluop (2)
 	   // jr bit
 		switch (op) {
+
+                case 57://sw
+                    return "100010101000000";
+                case 49://lw
+                    return "110011000100000";
+                case  17://add.s
+                    if(ins.substring(26,32).equals("000000")){
+                        return "111000001000000";
+                    }else if(ins.substring(6,11).equals("01000")){//bc1t
+						return "101000000000000";
+					}
+					else if(ins.substring(6,11).equals("10000")){//cmp float
+						return "111000011000000";
+					}
 		case 0:
                         if("001000".equals(ins.substring(26,32)))
-                            return "11000001000001";
+                            return "011000001000001";
 			// RType
-			return "11000001000000";
+			return "011000001000000";
                 case 13:
                         //ORI
-                        return "11110000000000";
+                        return "011110000000000";
                 case 12:
                         //ANDI
-                        return "11110000000100";
+                        return "011110000000100";
 		case 8:
                         // ADDI
-			return "10010000000000";
+			return "010010000000000";
 		case 35:
 			// LW
-			return "10011000100000";
+			return "010011000100000";
 		case 43:
 			// SW
-			return "00010101000000";
+			return "000010101000000";
 		case 4:
 			// BEQ
-			return "00100010000000";
+			return "000100010000000";
                 case 5:
 			// BNE
-			return "00100010010000";
+			return "000100010010000";
 		case 2:
 			// JUMP
-			return "00000000001000";
+			return "000000000001000";
                 case 3:
                         // JAL
-                        return "10000000001000";
+                        return "010000000001000";
 		default:
 			return null;
 		}

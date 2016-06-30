@@ -9,13 +9,13 @@ public class MEM_WB {
         /**
          * Data which was read from memory in MEM stage.
          */
-	int READ_DATA = 0;
+	float READ_DATA = 0;
         /**
          * Result calculated by ALU in EXE stage.
          * For a R-Type Instruction.
          * Or read from MEM
          */
-	int ALU_result;
+	float ALU_result;
         /**
          * Address of RegisterFile which data should be written to.
          */
@@ -30,7 +30,7 @@ public class MEM_WB {
          * Data that has been read from Memory in MEM stage.
          * @return Data - an INT containing data, ALU_Result points to.
          */
-	public int getREAD_DATA() {
+	public float getREAD_DATA() {
 		return READ_DATA;
 	}
 
@@ -39,7 +39,7 @@ public class MEM_WB {
          * Set Data that was read fr
          * @param READ_DATA 
          */
-	public void setREAD_DATA(int READ_DATA) {
+	public void setREAD_DATA(float READ_DATA) {
 		this.READ_DATA = READ_DATA;
 	}
 
@@ -48,7 +48,7 @@ public class MEM_WB {
          * @return ALU_Result - ALU Operation Result represented in INT
          * in EXE stage.
          */
-	public int getALU_result() {
+	public float getALU_result() {
 		return ALU_result;
 	}
 
@@ -57,7 +57,7 @@ public class MEM_WB {
          * 
          * @param ALU_result - that should be stored in MEM/WB.
          */
-	public void setALU_result(int ALU_result) {
+	public void setALU_result(float ALU_result) {
 		this.ALU_result = ALU_result;
 	}
         /**

@@ -6,6 +6,7 @@
 package GUI;
 
 import Assembler.Instruction;
+import FPU_.*;
 import HBDMIPS.CP0;
 import HBDMIPS.EXE;
 import HBDMIPS.EXE_MEM;
@@ -18,9 +19,8 @@ import HBDMIPS.MEM_WB;
 import HBDMIPS.Register_file;
 import HBDMIPS.Timer;
 import HBDMIPS.WB;
-import SyscallAPI.Mem2Cache;
 import SyscallAPI.PCB;
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -63,7 +63,19 @@ public class Computer {
     MEM stage_mem;
     WB stage_wb;
     AddressAllocator aa;
-    
+
+    //floating point (FPU) stages
+    A1 a1 = new A1();
+    A2 a2 = new A2();
+    A3 a3 = new A3();
+    A4 a4 = new A4();
+
+    //FPU pipeline registers
+    A1_A2 a1a2 = new A1_A2();
+    A2_A3 a2a3 = new A2_A3();
+    A3_A4 a3a4 = new A3_A4();
+    ID_FLOAT id_float = new ID_FLOAT();
+
     public Computer(){
         runable = true;
         enableintrrupt = true;
@@ -94,10 +106,51 @@ public class Computer {
         return deci;
     }
     public boolean runSingleSycle(){
+
         if (currentLineOfInstructions < lineOfInstructions) {
+            //System.out.println(currentLineOfInstructions + " in maaaaanamaaa");
             stage_if.action(modeBit);
-            stage_id.action(modeBit);
-            stage_exe.action(modeBit);
+            //System.out.println(stage_if.getPC() + " okkkkkkk " +this.stage_if.getInstruction());
+            Object ans=stage_id.action(modeBit);
+            if(stage_id.isBranchFloat()){
+                if(ifid.getIns().substring(14,16).equals("01") && this.stage_id.reg_float.flag_code==1){//bc1t
+                    int offset=Integer.parseInt(stage_id.idFLoat.signExt,2);
+
+                    //offset*=4;
+                    stage_if.setPC(stage_if.getPC()+offset);
+                    return true;
+                }
+                else{
+                    stage_if.setPC(stage_if.getPC());//nemidunam ....
+                    return true;
+                }
+            }
+            else if (stage_id.idFLoat.controlBits!=null && stage_id.cu_result.charAt(0) == '1'){
+
+
+
+                ID_FLOAT id_float=(ID_FLOAT)ans;
+                String cu_result=id_float.controlBits;
+                A1_A2 a1a2=a1.action(id_float);
+                A2_A3 a2a3=a2.action(a1a2);
+                A3_A4 a3a4=a3.action(a2a3);
+                this.exemem=a4.action(a3a4);
+                this.ifid.setPC(a4.exemem.getNew_PC());
+                this.stage_mem.isFloat(this.exemem);
+                this.memwb=this.stage_mem.action(modeBit,aa);
+                this.memwb.setControlBits(cu_result);
+                this.stage_wb.isFloat(this.memwb);
+                this.stage_wb.action(modeBit);
+
+                //System.out.println(this.stage_id.reg_float.getReg(1) + " vs "+this.stage_id.reg_float.getReg(2) + " " + this.stage_id.reg_float.getReg(3));
+                return true;
+
+            }
+            else{
+                stage_exe.action(modeBit);
+            }
+
+
             if(programs!=null){
                 for(PCB program:programs){
                     program.waitAction();
@@ -275,7 +328,8 @@ public class Computer {
                 else{
                     int old_pc = getPC();
                     int pcbits = old_pc/(2^28);
-                    // not added pc to sign but it's ready for use then
+                    // not added pc to sign but it's ready for use the
+                    System.out.println(stage_exe.getJ_pc().length() + "jjnk");
                     int offset = Integer.parseInt(stage_exe.getJ_pc(), 2)/4;
                     stage_if.setPC(offset);
                     if(stage_exe.isRegwrite()){ // it's means have jal (our agreement)
@@ -292,6 +346,13 @@ public class Computer {
                 stage_if.setPC(pc); 
             }
             if (stage_exe.isBranch()) {
+                if(stage_exe.isBranchFloat()){
+                    if(ifid.getIns().substring(14,16).equals("01") && this.stage_id.reg_float.flag_code==1){//bc1t
+                        int offset=Integer.parseInt(stage_exe.getIdexe().getSignExt());
+                        offset*=4;
+                        stage_if.setPC(stage_if.getPC()+offset);
+                    }
+                }
                 if (exemem.getALU_result() == 0 && !stage_exe.isNot()) {
                     int offset;
                     
