@@ -53,6 +53,12 @@ public class MEM {
 				: true;
 		boolean MEM_WRITE = (exemem.getControlBits().charAt(6)) == '0' ? false
 				: true;
+        if(exemem.getWrite_Register()==-1){
+            memwb.setALU_result(exemem.getALU_result());
+            memwb.setWrite_Register(exemem.getWrite_Register());
+            memwb.setControlBits(exemem.getControlBits());
+            return this.memwb;
+        }
 		if (MEM_WRITE) {
                         if(this.exemem.controlBits.charAt(0)=='1'){
 			data_mem.set((int)exemem.getALU_result(), Float.toString(exemem.getRT_DATA()));
@@ -66,7 +72,8 @@ public class MEM {
 		if (MEM_READ) {
                     String data;
                     if(this.exemem.controlBits.charAt(0)=='1'){
-                        data=data_mem.get((int)exemem.getALU_result());
+                        int tmp = (int)exemem.getALU_result();
+                        data=data_mem.get(tmp);
                         memwb.setREAD_DATA(Float.parseFloat(data));
                         memwb.setALU_result(exemem.getALU_result());
                         memwb.setWrite_Register(exemem.getWrite_Register());
@@ -98,11 +105,24 @@ public class MEM {
         /**
          * View current Memory.
          * @return Print - memory in a String each cell in a line formatted. 
-         */        
+         */
+        public boolean isint(String str){
+            try{
+                Integer.parseInt(str);
+                return true;
+            }
+            catch(Exception e){
+                return false;
+            }
+        }
         public String print() {
             String print="";
             for (int i = 0; i < data_mem.size(); i++) {
-                print+="Cell  [" + i + "] : " + Integer.parseInt(data_mem.get(i)) +"\n";
+                if(isint(data_mem.get(i))) {
+                    print += "Cell  [" + i + "] : " + Integer.parseInt(data_mem.get(i)) + "\n";
+                }else{
+                    print += "Cell  [" + i + "] : " + Float.parseFloat(data_mem.get(i)) + "\n";
+                }
             }
             return print;
         }

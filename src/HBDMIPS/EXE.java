@@ -46,7 +46,7 @@ public class EXE {
          */
         public boolean isSyscall(){
             String func_bit = getIdexe().getSignExt().substring(26, 32);
-            String ALUOp = getIdexe().getControlBits().substring(1, 3)+getIdexe().getControlBits().substring(11, 13);
+            String ALUOp = getIdexe().getControlBits().substring(2, 4)+getIdexe().getControlBits().substring(12, 14);
             if("001100".equals(func_bit) && "1000".equals(ALUOp)){
                 id_stage.regfile.setReg(31, if_stage.getPC());
                 return true;
@@ -54,8 +54,12 @@ public class EXE {
             
             return false;
         }
-        
-        
+        public boolean isBranchFloat(){
+            if(this.getIdexe().getControlBits().equals("101000000000000")){
+                return true;
+            }
+            return false;
+        }
         /**
          * Detects If Instruction contains value which
          * should be written back IN RegisterFile? [LW..]
@@ -105,7 +109,7 @@ public class EXE {
 		boolean REG_DEST = (getIdexe().getControlBits().charAt(8)) == '0' ? false : true;
                                             //false means RT Should be used,  an I-Type instruction.
                                             //true means RD Should be used, is a R-Type instruction. 
-		String ALUOp = getIdexe().getControlBits().substring(1, 3)+getIdexe().getControlBits().substring(11, 13);
+		String ALUOp = getIdexe().getControlBits().substring(2, 4)+getIdexe().getControlBits().substring(12, 14);
                                             //which is used in ALUControl
                 boolean ALU_Src = (getIdexe().getControlBits().charAt(4)) == '0' ? false
 				: true;// false means use readData is an R-type instruction.
@@ -119,7 +123,7 @@ public class EXE {
 			exemem.setWrite_Register(getIdexe().RT);
 		}
                 String alucu_func = alu_cu(func_bit,ALUOp);//initialize ALUControl.
-                if(isJump()){
+                if(isJump()){/////inja nemire to
                     setJ_pc(getIdexe().getSignExt());
                     //to the signExtend substring 0 to 25 [6 to 31 in our convention]
                     //shifted left by 2bits and then bits 28 to 31 of old PC 
@@ -188,6 +192,8 @@ public class EXE {
          */
 	public int alu(int data_1, int data_2, String op) {
 		switch (op) {
+            case "1000"://bct1
+                return 0;
 		case "0010":
 			return data_1 + data_2;
 		case "0110":
@@ -220,6 +226,8 @@ public class EXE {
          */
 	public String alu_cu(String func_bit, String Aluop) {
 		switch (Aluop) {
+
+
 		case "1000":
 			switch (func_bit) {
 			case "100000": //add

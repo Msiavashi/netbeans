@@ -45,6 +45,7 @@ public class CU {
 	   // second aluop (2)
 	   // jr bit
 		switch (op) {
+
                 case 57://sw
                     return "100010101000000";
                 case 49://lw
@@ -52,7 +53,12 @@ public class CU {
                 case  17://add.s
                     if(ins.substring(26,32).equals("000000")){
                         return "111000001000000";
-                    }
+                    }else if(ins.substring(6,11).equals("01000")){//bc1t
+						return "101000000000000";
+					}
+					else if(ins.substring(6,11).equals("10000")){//cmp float
+						return "111000011000000";
+					}
 		case 0:
                         if("001000".equals(ins.substring(26,32)))
                             return "011000001000001";

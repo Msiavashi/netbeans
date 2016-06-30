@@ -18,10 +18,10 @@ public class A1 {
     public A1_A2 action(ID_FLOAT id_float){
         System.out.println("slm***************");
         this.idFloat=id_float;
-        if(this.idFloat.controlBits.equals("000010101000000") && this.idFloat.controlBits.equals("010011000100000")){
+        if(this.idFloat.controlBits.equals("000010101000000") && this.idFloat.controlBits.equals("010011000100000")) {
             //this.idFloat.RT=this.idFloat.signExt;
-            int ans = Integer.parseInt(this.idFloat.signExt,2);
-            this.idFloat.RT_DATA=ans;
+            int ans = Integer.parseInt(this.idFloat.signExt, 2);//sing extends
+            this.idFloat.RT_DATA = ans;
         }
         Structure Struct1=new Structure();
         Struct1=Util.IEEERepresentation(Struct1, idFloat.RS_DATA,bits ,bias);
@@ -56,6 +56,9 @@ public class A1 {
         if(this.idFloat.controlBits.charAt(8)=='0'){
             this.a1a2.reg_des=this.idFloat.RT;
         }else{this.a1a2.reg_des=this.idFloat.RD;}
+        if(this.idFloat.controlBits.equals("111000011000000")){
+            this.a1a2.reg_des=-1;
+        }
         this.a1a2.bitsDiff=bitsDiff;
         this.a1a2.controlBits=this.idFloat.controlBits;
         this.a1a2.rs=this.idFloat.RS_DATA;

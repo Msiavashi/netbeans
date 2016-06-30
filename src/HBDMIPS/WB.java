@@ -37,6 +37,12 @@ public class WB {
 				: true;
 		boolean REG_WRITE = (memwb.getControlBits().charAt(1)) == '0' ? false
 				: true;
+		if(this.memwb.getWrite_Register()==-1){
+			if(this.memwb.getALU_result()==0f){
+				id.reg_float.flag_code=1;
+			}else{id.reg_float.flag_code=0;}
+			return ;
+		}
 		if (REG_WRITE) {
 			if (!MEM2REG){
                                 if(this.memwb.controlBits.charAt(0)=='1'){

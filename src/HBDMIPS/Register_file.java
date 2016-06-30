@@ -11,7 +11,6 @@ import java.util.List;
  */
 public class Register_file {
 	int[] Regfile = new int[32];
-
 	public Register_file(String Type){
             if (Type.equals("FILE")){
                 List<String> ins_mem = new ArrayList<String>(FileHandler.FileIO.FiletoStringArray("RegData.txt"));

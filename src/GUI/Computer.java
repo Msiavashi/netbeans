@@ -108,9 +108,26 @@ public class Computer {
     public boolean runSingleSycle(){
 
         if (currentLineOfInstructions < lineOfInstructions) {
+            //System.out.println(currentLineOfInstructions + " in maaaaanamaaa");
             stage_if.action(modeBit);
+            //System.out.println(stage_if.getPC() + " okkkkkkk " +this.stage_if.getInstruction());
             Object ans=stage_id.action(modeBit);
-            if (stage_id.idFLoat.controlBits!=null && stage_id.idFLoat.controlBits.charAt(0) == '1'){
+            if(stage_id.isBranchFloat()){
+                if(ifid.getIns().substring(14,16).equals("01") && this.stage_id.reg_float.flag_code==1){//bc1t
+                    int offset=Integer.parseInt(stage_exe.getIdexe().getSignExt());
+                    offset*=4;
+                    stage_if.setPC(stage_if.getPC()+offset);
+                    return true;
+                }
+                else{
+                    stage_if.setPC(stage_if.getPC());//nemidunam ....
+                    return true;
+                }
+            }
+            else if (stage_id.idFLoat.controlBits!=null && stage_id.cu_result.charAt(0) == '1'){
+
+
+
                 ID_FLOAT id_float=(ID_FLOAT)ans;
                 String cu_result=id_float.controlBits;
                 A1_A2 a1a2=a1.action(id_float);
@@ -123,7 +140,8 @@ public class Computer {
                 this.memwb.setControlBits(cu_result);
                 this.stage_wb.isFloat(this.memwb);
                 this.stage_wb.action(modeBit);
-                System.out.println(this.stage_id.reg_float.getReg(1) + " vs "+this.stage_id.reg_float.getReg(2) + " " + this.stage_id.reg_float.getReg(3));
+
+                //System.out.println(this.stage_id.reg_float.getReg(1) + " vs "+this.stage_id.reg_float.getReg(2) + " " + this.stage_id.reg_float.getReg(3));
                 return true;
 
             }
@@ -309,7 +327,8 @@ public class Computer {
                 else{
                     int old_pc = getPC();
                     int pcbits = old_pc/(2^28);
-                    // not added pc to sign but it's ready for use then
+                    // not added pc to sign but it's ready for use the
+                    System.out.println(stage_exe.getJ_pc().length() + "jjnk");
                     int offset = Integer.parseInt(stage_exe.getJ_pc(), 2)/4;
                     stage_if.setPC(offset);
                     if(stage_exe.isRegwrite()){ // it's means have jal (our agreement)
@@ -326,6 +345,13 @@ public class Computer {
                 stage_if.setPC(pc); 
             }
             if (stage_exe.isBranch()) {
+                if(stage_exe.isBranchFloat()){
+                    if(ifid.getIns().substring(14,16).equals("01") && this.stage_id.reg_float.flag_code==1){//bc1t
+                        int offset=Integer.parseInt(stage_exe.getIdexe().getSignExt());
+                        offset*=4;
+                        stage_if.setPC(stage_if.getPC()+offset);
+                    }
+                }
                 if (exemem.getALU_result() == 0 && !stage_exe.isNot()) {
                     int offset;
                     

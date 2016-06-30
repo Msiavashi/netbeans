@@ -82,10 +82,10 @@ public class A4 {//computer va ID ...va entekhabe reg_des
     public int new_pc(float res,char signal,int pc,String imm){
         int ans=pc;
         if(res==0 && signal=='1'){
-            ans = Integer.parseInt(imm, 2);
+            ans = Integer.parseInt(imm, 2);///////////////IMPORTANT should never execute ......
             
         }else{
-            ans=pc+4;
+            ans=pc;
         }
         return ans;
     }

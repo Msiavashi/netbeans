@@ -51,13 +51,15 @@ public class Assembler {
         instructionCodes.put("bne", "000101");
         instructionCodes.put("lw", "100011");
         instructionCodes.put("sw", "101011");
-
+        instructionCodes.put("bc1t","010001");
+        instructionCodes.put("c.eq.s","010001");
         // J-Type Instructions
         instructionCodes.put("j", "000010");
         instructionCodes.put("jal", "000011");
-		
+
 		// SysCall Instruction
         instructionCodes.put("syscall", "001100");
+
     }
 
     private void initInstructions() {
@@ -71,7 +73,9 @@ public class Assembler {
         instructions.put("sll", instructionR_shift);
         instructions.put("srl", instructionR_shift);
         instructions.put("jr", instructionR_jr);
-
+        instructions.put("c.eq.s",instructionF_cmp);
+        //branch float
+        instructions.put("bc1t",instructionI_branch_float);
         //R-type instructions for floating point single precision
         instructions.put("add.s", instructionR_float_sp);
 
@@ -273,12 +277,12 @@ public class Assembler {
     private instructionParser instructionR_float_sp = new instructionParser() {
         @Override
         public String parse(String[] parts) {
-            String opcode = "010001";
+            String opcode = instructionCodes.get(parts[0]);
             String ft = getFloatRegister(parts[1]);
             String fs = getFloatRegister(parts[2]);
             String fd = getFloatRegister(parts[3]);
             String format = "10000";
-            String funct = instructionCodes.get(parts[0]);
+            String funct = "000000";
             return opcode + format + fs + ft + fd  + funct;
         }
     };
@@ -295,6 +299,18 @@ public class Assembler {
             return opcode + rs + rt + rd + shamt + funct;
         }
     };
+    //cmp float
+    private instructionParser instructionF_cmp = new instructionParser() {//c.eq.s
+        public String parse(String[] parts) {
+            String opcode = instructionCodes.get(parts[0]);
+            String fs = getFloatRegister(parts[1]);
+            String ft = getFloatRegister(parts[2]);
+            //String immediate = parseSigned16BitBin(Integer.parseInt(parts[3]));
+            return opcode + "10000" + ft + fs + "000"+"00"+"00"+"0010";
+
+        }
+    };
+
 
     // Instructions: addi, andi, ori
     private instructionParser instructionI_std = new instructionParser() {
@@ -307,7 +323,15 @@ public class Assembler {
 
         }
     };
+    ///branch_float
+    private instructionParser instructionI_branch_float = new instructionParser() {
+        public String parse(String[] parts) {
+            String opcode = instructionCodes.get(parts[0]);
+            String immediate = parseSigned16BitBin(labels.get(parts[1]) - lineNumber - 1);
+            return opcode +"01000"+"000" +"01" +  immediate;
 
+        }
+    };
     // Instructions: beq, bne
     private instructionParser instructionI_branch = new instructionParser() {
         public String parse(String[] parts) {

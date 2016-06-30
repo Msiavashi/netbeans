@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class Registers {
     private HashMap<String, String> floatRegisters = new HashMap<String, String>();
     float[] regFile=new float[32];
-
+    public int flag_code;
     public Registers(){
 
         initRegisterCodes();
