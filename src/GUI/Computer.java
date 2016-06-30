@@ -114,8 +114,9 @@ public class Computer {
             Object ans=stage_id.action(modeBit);
             if(stage_id.isBranchFloat()){
                 if(ifid.getIns().substring(14,16).equals("01") && this.stage_id.reg_float.flag_code==1){//bc1t
-                    int offset=Integer.parseInt(stage_exe.getIdexe().getSignExt());
-                    offset*=4;
+                    int offset=Integer.parseInt(stage_id.idFLoat.signExt,2);
+
+                    //offset*=4;
                     stage_if.setPC(stage_if.getPC()+offset);
                     return true;
                 }

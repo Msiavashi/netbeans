@@ -2,40 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8476d780-48c5-4374-9c3e-b81fe63a0431" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/FPU_/A1.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/FPU_/A1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/FPU_/A4.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/FPU_/A4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$1.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$10.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$11.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$2.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$3.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$4.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$5.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$6.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$7.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$8.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$9.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/Assembler/Assembler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/HBDMIPS/CU.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/HBDMIPS/CU.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/GUI/Computer.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/GUI/Computer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/HBDMIPS/EXE.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/HBDMIPS/EXE.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/HBDMIPS/ID.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/HBDMIPS/ID.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/HBDMIPS/MEM.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/HBDMIPS/MEM.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/HBDMIPS/Register_file.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/HBDMIPS/Register_file.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/FPU/Registers.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/FPU/Registers.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CoffeeMIPS/HBDMIPS/WB.class" afterPath="$PROJECT_DIR$/out/production/CoffeeMIPS/HBDMIPS/WB.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FPU_/A1.java" afterPath="$PROJECT_DIR$/src/FPU_/A1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FPU_/A4.java" afterPath="$PROJECT_DIR$/src/FPU_/A4.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Assembler/Assembler.java" afterPath="$PROJECT_DIR$/src/Assembler/Assembler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HBDMIPS/CU.java" afterPath="$PROJECT_DIR$/src/HBDMIPS/CU.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src.rar" afterPath="$PROJECT_DIR$/src.rar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/Computer.java" afterPath="$PROJECT_DIR$/src/GUI/Computer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HBDMIPS/EXE.java" afterPath="$PROJECT_DIR$/src/HBDMIPS/EXE.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HBDMIPS/ID.java" afterPath="$PROJECT_DIR$/src/HBDMIPS/ID.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HBDMIPS/MEM.java" afterPath="$PROJECT_DIR$/src/HBDMIPS/MEM.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RegData.txt" afterPath="$PROJECT_DIR$/RegData.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HBDMIPS/Register_file.java" afterPath="$PROJECT_DIR$/src/HBDMIPS/Register_file.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FPU/Registers.java" afterPath="$PROJECT_DIR$/src/FPU/Registers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HBDMIPS/WB.java" afterPath="$PROJECT_DIR$/src/HBDMIPS/WB.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CoffeeMIPS.iws" />
@@ -62,8 +31,8 @@
       <file leaf-file-name="Computer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI/Computer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15635179">
-              <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+            <state vertical-scroll-proportion="1.25387">
+              <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
               <folding>
                 <element signature="e#2222#2223#0" expanded="true" />
                 <element signature="e#2266#2267#0" expanded="true" />
@@ -132,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/src/HBDMIPS/IF.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
+              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -156,8 +125,8 @@
       <file leaf-file-name="ID.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HBDMIPS/ID.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8076925">
-              <caret line="46" column="134" selection-start-line="46" selection-start-column="134" selection-end-line="46" selection-end-column="134" />
+            <state vertical-scroll-proportion="5.923077">
+              <caret line="115" column="57" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#9384#9385#0" expanded="true" />
@@ -224,8 +193,8 @@
         <option value="$PROJECT_DIR$/src/Assembler/Assembler.java" />
         <option value="$PROJECT_DIR$/src/HBDMIPS/MEM.java" />
         <option value="$PROJECT_DIR$/src/HBDMIPS/ID.java" />
-        <option value="$PROJECT_DIR$/src/GUI/Computer.java" />
         <option value="$PROJECT_DIR$/src/FPU_/A4.java" />
+        <option value="$PROJECT_DIR$/src/GUI/Computer.java" />
       </list>
     </option>
   </component>
@@ -247,8 +216,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1366" />
-    <option name="height" value="728" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -719,36 +690,36 @@
       <option name="number" value="Default" />
       <updated>1466905773953</updated>
       <workItem from="1466905780529" duration="29974000" />
-      <workItem from="1467048738971" duration="76638000" />
+      <workItem from="1467048738971" duration="78779000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106612000" />
+    <option name="totallyTimeSpent" value="108753000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="728" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32608697" sideWeight="0.4969419" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39966556" sideWeight="0.5764526" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38925081" sideWeight="0.581571" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39966556" sideWeight="0.4235474" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38925081" sideWeight="0.41842902" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19189602" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18957704" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41638795" sideWeight="0.42584097" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4147157" sideWeight="0.42125383" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1323,18 +1294,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HBDMIPS/ID.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8076925">
-          <caret line="46" column="134" selection-start-line="46" selection-start-column="134" selection-end-line="46" selection-end-column="134" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#9384#9385#0" expanded="true" />
-            <element signature="e#9403#9404#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Assembler/Assembler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.423077">
@@ -1363,27 +1322,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="508" column="0" selection-start-line="508" selection-start-column="0" selection-end-line="508" selection-end-column="0" />
-          <folding>
-            <element signature="e#4725#4814#0" expanded="true" />
-            <element signature="e#8952#8953#0" expanded="true" />
-            <element signature="e#9018#9019#0" expanded="true" />
-            <element signature="e#25045#25067#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HBDMIPS/IF.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/FPU/Registers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1408,10 +1346,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="508" column="0" selection-start-line="508" selection-start-column="0" selection-end-line="508" selection-end-column="0" />
+          <folding>
+            <element signature="e#4725#4814#0" expanded="true" />
+            <element signature="e#8952#8953#0" expanded="true" />
+            <element signature="e#9018#9019#0" expanded="true" />
+            <element signature="e#25045#25067#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HBDMIPS/IF.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HBDMIPS/ID.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.923077">
+          <caret line="115" column="57" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9384#9385#0" expanded="true" />
+            <element signature="e#9403#9404#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/Computer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15635179">
-          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+        <state vertical-scroll-proportion="1.25387">
+          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
           <folding>
             <element signature="e#2222#2223#0" expanded="true" />
             <element signature="e#2266#2267#0" expanded="true" />
