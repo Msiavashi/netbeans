@@ -114,8 +114,37 @@ public class Computer {
             Object ans=stage_id.action(modeBit);
             if(stage_id.isBranchFloat()){
                 if(ifid.getIns().substring(14,16).equals("01") && this.stage_id.reg_float.flag_code==1){//bc1t
-                    int offset=Integer.parseInt(stage_id.idFLoat.signExt,2);
-
+                    String ofs=stage_id.idFLoat.signExt;
+                    int offset=0;
+                    if(ofs.charAt(0)=='0'){
+                        offset=Integer.parseInt(stage_id.idFLoat.signExt,2);
+                    }
+                    
+                    else if(ofs.charAt(0)=='1'){
+                        boolean flag=true;
+                        String newAddress = "";
+                        for(int i=ofs.length()-1;i>=0;i--){
+                            if(flag){
+                                char ch = ofs.charAt(i);
+                                newAddress = ch + newAddress;
+                                if(ch=='1'){
+                                    flag=false;
+                                }
+                            }
+                            else{
+                                char ch = ofs.charAt(i);
+                                
+                                if(ch=='1'){
+                                    newAddress = '0' + newAddress;
+                                }
+                                if(ch=='0'){
+                                    newAddress = '1' + newAddress;
+                                }
+                            }
+                        offset = Integer.parseInt(newAddress, 2);                        
+                        offset = -1*offset;
+                        }
+                    }
                     //offset*=4;
                     stage_if.setPC(stage_if.getPC()+offset);
                     return true;
@@ -135,12 +164,14 @@ public class Computer {
                 A2_A3 a2a3=a2.action(a1a2);
                 A3_A4 a3a4=a3.action(a2a3);
                 this.exemem=a4.action(a3a4);
-                this.ifid.setPC(a4.exemem.getNew_PC());
+                this.exemem.setNew_PC(this.stage_if.getPC());
+                
                 this.stage_mem.isFloat(this.exemem);
                 this.memwb=this.stage_mem.action(modeBit,aa);
                 this.memwb.setControlBits(cu_result);
                 this.stage_wb.isFloat(this.memwb);
                 this.stage_wb.action(modeBit);
+                currentLineOfInstructions=this.stage_if.getPC();
 
                 //System.out.println(this.stage_id.reg_float.getReg(1) + " vs "+this.stage_id.reg_float.getReg(2) + " " + this.stage_id.reg_float.getReg(3));
                 return true;
@@ -346,13 +377,13 @@ public class Computer {
                 stage_if.setPC(pc); 
             }
             if (stage_exe.isBranch()) {
-                if(stage_exe.isBranchFloat()){
-                    if(ifid.getIns().substring(14,16).equals("01") && this.stage_id.reg_float.flag_code==1){//bc1t
-                        int offset=Integer.parseInt(stage_exe.getIdexe().getSignExt());
-                        offset*=4;
-                        stage_if.setPC(stage_if.getPC()+offset);
-                    }
-                }
+//                if(stage_exe.isBranchFloat()){
+//                    if(ifid.getIns().substring(14,16).equals("01") && this.stage_id.reg_float.flag_code==1){//bc1t
+//                        int offset=Integer.parseInt(stage_exe.getIdexe().getSignExt());
+//                        offset*=4;
+//                        stage_if.setPC(stage_if.getPC()+offset);
+//                    }
+//                }
                 if (exemem.getALU_result() == 0 && !stage_exe.isNot()) {
                     int offset;
                     

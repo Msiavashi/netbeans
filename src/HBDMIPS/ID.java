@@ -102,7 +102,7 @@ public class ID{
                 }
                 
                 else{/////need to commit
-                    if(this.ifid.ins.substring(0,6).equals("010001") && this.ifid.ins.substring(6,11).equals("10000")){
+                    if(this.ifid.ins.substring(0,6).equals("010001") && this.ifid.ins.substring(6,11).equals("10000") && this.ifid.ins.substring(21,32).equals("00000000010")){////
                         int FS=Integer.parseInt(instruction.substring(16,21), 2);
                         int FT=Integer.parseInt(instruction.substring(11, 16), 2);
                         float FS_DATA = this.reg_float.getReg(FS);//regfile.getRegfile(RS);
@@ -133,19 +133,19 @@ public class ID{
                         return ans;
                     }
                     else if(this.ifid.ins.substring(0,6).equals("010001")){
-                    int RD = Integer.parseInt(instruction.substring(16, 21), 2);
+                    int RD = Integer.parseInt(instruction.substring(21,26), 2);
                     int RS = Integer.parseInt(instruction.substring(11, 16), 2);
-                    int RT = Integer.parseInt(instruction.substring(21,26), 2);
+                    int RT = Integer.parseInt(instruction.substring(16,21), 2);
                     float RS_DATA = this.regFile.getFloatRegisters().getReg(RS);
                     float RT_DATA = this.regFile.getFloatRegisters().getReg(RT);///
-                    System.out.println(RD +" bbv " + RS+ " " + RD);
+                    //System.out.println(RD +" bbv " + RS+ " " + RD);
                     this.idFLoat.PC=this.idexe.PC;
                     this.idFLoat.RD=RD;
                     this.idFLoat.RS_DATA=RS_DATA;
                     this.idFLoat.RT_DATA=RT_DATA;
-                    this.idFLoat.controlBits=this.signExt(cu_result);
+                    this.idFLoat.controlBits=cu_result;
                     this.idFLoat.RT=RT;
-                    this.idFLoat.signExt=instruction.substring(16,32);
+                    this.idFLoat.signExt=this.signExt(instruction.substring(16,32));
                     ans=this.idFLoat;
                     return ans;
                     }
