@@ -18,7 +18,8 @@ public class A1 {
     public A1_A2 action(ID_FLOAT id_float){
         System.out.println("slm***************");
         this.idFloat=id_float;
-        if(this.idFloat.controlBits.equals("000010101000000") && this.idFloat.controlBits.equals("010011000100000")) {
+        //if it was swc1 or lwc1
+        if(this.idFloat.controlBits.equals("100010101000000") || this.idFloat.controlBits.equals("110011000100000")) {
             //this.idFloat.RT=this.idFloat.signExt;
             int ans = Integer.parseInt(this.idFloat.signExt, 2);//sing extends
             this.idFloat.RT_DATA = ans;
