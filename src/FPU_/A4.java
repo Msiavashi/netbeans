@@ -56,10 +56,10 @@ public class A4 {//computer va ID ...va entekhabe reg_des
         
         //use this.a3a4.signExt
         float MyResult = Struct3.IEEE;
-        
+        System.out.println(MyResult);
         this.exemem.setALU_result(MyResult);
         this.exemem.setControlBits(this.a3a4.controlBits);
-        this.exemem.setNew_PC(this.new_pc(MyResult,a3a4.controlBits.charAt(6), this.a3a4.PC,this.a3a4.signExt));///set karaden pc jadid
+       // this.exemem.setNew_PC();///set karaden pc jadid
         this.exemem.setRT_DATA(this.a3a4.rt);//rt data
         
         if(MyResult==0){

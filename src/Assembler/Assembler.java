@@ -278,12 +278,12 @@ public class Assembler {
         @Override
         public String parse(String[] parts) {
             String opcode = instructionCodes.get(parts[0]);
-            String ft = getFloatRegister(parts[1]);
+            String fd = getFloatRegister(parts[1]);
             String fs = getFloatRegister(parts[2]);
-            String fd = getFloatRegister(parts[3]);
+            String ft = getFloatRegister(parts[3]);
             String format = "10000";
             String funct = "000000";
-            return opcode + format + fs + ft + fd  + funct;
+            return opcode + format + ft + fs + fd  + funct;
         }
     };
 
